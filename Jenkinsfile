@@ -19,7 +19,8 @@ pipeline {
               if (env.BUCKETNAME) {
                   sh(script: """
                       terraform init \
-                      -backend-config="bucket=${env.BUCKETNAME}, key=dev/terraform.tfstate"
+                      -backend-config="bucket=${env.BUCKETNAME}" \
+                      -backend-config="key=dev/terraform.tfstate"
                   """, returnStdout: true).trim()
               } else {
                   error "Failing the build because a bucket name is empty."
