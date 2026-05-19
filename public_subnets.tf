@@ -7,6 +7,6 @@ resource "aws_subnet" "public_subnets" {
   cidr_block          = cidrsubnet(var.cidr_block, 4, index(var.azs, each.value))
 
   tags                = {
-    Name              = "Public Subnet-${each.value}"
+    Name              = "Public Subnet-${index(var.azs, each.value)}"
   }
 }
