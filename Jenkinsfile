@@ -11,10 +11,11 @@ pipeline {
       stage('Terraform init') {
           steps {
             script {
-            sh(script: """
-                      cat "../plan_output.txt"
-                  """, returnStdout: true).trim()
-          }
+              def fileContent = readFile(file: '../plan_output.txt', encoding: 'UTF-8')
+            
+            // Print the content to console for verification
+            echo "File Content: ${fileContent}"
+            }
           }
       }
   }
