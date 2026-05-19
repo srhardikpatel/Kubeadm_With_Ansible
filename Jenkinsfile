@@ -32,5 +32,6 @@ pipeline {
         steps {
           build "create_s3_bucket"
         }
+      }
   }
 }
