@@ -15,6 +15,15 @@ pipeline {
             
             // Print the content to console for verification
             echo "File Content: ${fileContent}"
+              if (fileContent) {
+                  sh(script: """
+                      terraform init \
+                      -backend-config="bucket=${fileContent}" \
+                      -backend-config="key=dev/terraform.tfstate"
+                  """, returnStdout: true).trim()
+              } else {
+                  error "Failing the build because a bucket name is empty."
+              }
             }
           }
       }
