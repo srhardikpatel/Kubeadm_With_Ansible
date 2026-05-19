@@ -28,5 +28,9 @@ pipeline {
               sh 'terraform output -raw bucket_name -no-color > ../plan_output.txt'
             }
       }
+      stage('Run EC2 instance') {
+        steps {
+          build "create_s3_bucket"
+        }
   }
 }
