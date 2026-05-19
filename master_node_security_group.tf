@@ -1,7 +1,7 @@
 resource "aws_security_group" "master_node" {
-  name        = "Master-Node-SG"
-  description = "This is a sg created for Master Node."
-  vpc_id      = aws_vpc.main.id
+  name          = "Master-Node-SG"
+  description   = "This is a sg created for Master Node."
+  vpc_id        = aws_vpc.main.id
 
   ingress {
     from_port   = 22
@@ -53,6 +53,6 @@ resource "aws_security_group" "master_node" {
   }
 
   tags = {
-    Name = "Master Node SG"
+    Name        = "Master Node SG"
   }
 }

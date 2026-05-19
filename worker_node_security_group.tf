@@ -1,7 +1,7 @@
 resource "aws_security_group" "worker_node" {
-  name        = "Worker-Node-SG"
-  description = "This is a sg created for Worker Node."
-  vpc_id      = aws_vpc.main.id
+  name          = "Worker-Node-SG"
+  description   = "This is a sg created for Worker Node."
+  vpc_id        = aws_vpc.main.id
 
   ingress {
     from_port   = 22
@@ -39,7 +39,7 @@ resource "aws_security_group" "worker_node" {
   }
 
   tags = {
-    Name = "Worker Node SG"
+    Name        = "Worker Node SG"
   }
 }
 
