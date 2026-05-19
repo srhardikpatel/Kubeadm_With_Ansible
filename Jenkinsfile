@@ -12,7 +12,7 @@ pipeline {
           steps {
             script {
             sh(script: """
-                      cat "plan_output.txt"
+                      cat "../plan_output.txt"
                   """, returnStdout: true).trim()
           }
           }
