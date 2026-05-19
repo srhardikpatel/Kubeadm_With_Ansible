@@ -10,7 +10,9 @@ pipeline {
   stages {
       stage('Terraform init') {
           steps {
-            echo "${cat "../plan_output.txt"}"
+            sh(script: """
+                      echo 'cat "../plan_output.txt"'
+                  """, returnStdout: true).trim()
           }
       }
   }
