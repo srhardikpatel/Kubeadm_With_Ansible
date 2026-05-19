@@ -1,5 +1,5 @@
 resource "aws_security_group" "master_node" {
-  name        = "master-node-SG"
+  name        = "Master-Node-SG"
   description = "This is a sg created for Master Node."
   vpc_id      = aws_vpc.main.id
 

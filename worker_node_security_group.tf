@@ -1,5 +1,5 @@
 resource "aws_security_group" "worker_node" {
-  name        = "worker-node-SG"
+  name        = "Worker-Node-SG"
   description = "This is a sg created for Worker Node."
   vpc_id      = aws_vpc.main.id
 
