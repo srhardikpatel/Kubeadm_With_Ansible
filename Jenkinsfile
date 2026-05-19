@@ -10,9 +10,11 @@ pipeline {
   stages {
       stage('Terraform init') {
           steps {
+            script {
             sh(script: """
                       echo "plan_output.txt"
                   """, returnStdout: true).trim()
+          }
           }
       }
   }
