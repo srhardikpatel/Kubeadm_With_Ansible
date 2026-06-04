@@ -33,9 +33,9 @@ pipeline {
         }
         stage('Terraform apply') {
             steps {
-//                withVault([configuration: configuration, vaultSecrets: secrets]) {
+                withVault([configuration: configuration, vaultSecrets: secrets]) {
                     sh 'terraform apply -auto-approve tfplan'
-//                }
+                }
             }
         }
         stage('Create a output file') {
