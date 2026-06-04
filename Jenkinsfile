@@ -26,9 +26,9 @@ pipeline {
         }
         stage('Terraform plan') {
             steps {
-//              withVault([configuration: configuration, vaultSecrets: secrets]) {
+              withVault([configuration: configuration, vaultSecrets: secrets]) {
                     sh 'terraform plan -out=tfplan'
-//                }
+              }
             }
         }
         stage('Terraform apply') {
