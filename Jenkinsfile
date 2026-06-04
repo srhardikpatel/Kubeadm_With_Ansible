@@ -1,5 +1,5 @@
 def configuration = [
-    vaultUrl: 'http://44.204.252.140:8200',
+    vaultUrl: 'http://13.220.146.135:8200',
     vaultCredentialId: 'vault-token',
     engineVersion: 1,
     skipSslVerification: true
