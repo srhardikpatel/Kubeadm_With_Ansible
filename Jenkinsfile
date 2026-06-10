@@ -1,5 +1,5 @@
 def configuration = [
-    vaultUrl: 'http://13.220.146.135:8200',
+    vaultUrl: 'http://35.175.176.187:8200',
     vaultCredentialId: 'vault-token',
     engineVersion: 1,
     skipSslVerification: true
@@ -40,15 +40,13 @@ pipeline {
         }
         stage('Create a output file') {
             steps {
-//                withVault([configuration: configuration, vaultSecrets: secrets]) {
                     sh 'terraform output -raw bucket_name -no-color > ../plan_output.txt'
-//                }
             }
         }
-        // stage('Run EC2 instance') {
-        //     steps {
-        //           build "create_s3_bucket"
-        //     }
-        //}
+        stage('Run EC2 instance') {
+            steps {
+                  build "create_ec2_instance"
+            }
+        }
     }
 }
