@@ -43,7 +43,7 @@ variable "volume_type" {
 variable "key_pair_name" {
   description = "Key Pair Name"
   type        = string
-  default     = "eks-key"
+  default     = "terra-key"
 }
 
 variable "master_sg_name" {
