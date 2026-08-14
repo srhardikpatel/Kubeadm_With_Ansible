@@ -1,6 +1,6 @@
 def configuration = [
-    vaultUrl: 'http://35.175.176.187:8200',
-    vaultCredentialId: 'vault-token',
+    vaultUrl: 'http://3.91.198.177:8200',
+    vaultCredentialId: 'token',
     engineVersion: 1,
     skipSslVerification: true
 ]
